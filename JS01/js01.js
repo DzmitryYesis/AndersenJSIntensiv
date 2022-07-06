@@ -14,19 +14,18 @@
 // Вводим 'abc', получаем "Некорректный ввод!"
 
 const task2 = () => {
-    let number1 = +prompt('Введите первое число:')
+    let number1 = Number(prompt('Введите первое число:'))
 
-    if (typeof (number1) !== 'number') {
+    if (!isNaN(number1)) {
+        let number2 = Number(prompt('Введите второе число:'))
+        if (!isNaN(number2)) {
+            return alert(`Ответ: ${number1 + number2}, ${number1 / number2}`)
+        } else {
+            return alert('Некорректный ввод!')
+        }
+    } else {
         return alert('Некорректный ввод!')
     }
-
-    let number2 = +prompt('Введите второе число:')
-
-    if (typeof (number2) !== 'number') {
-        return alert('Некорректный ввод!')
-    }
-
-    return alert(`Ответ: ${number1 + number2}, ${number1 / number2}`)
 }
 
 task2()
